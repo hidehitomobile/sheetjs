@@ -1,0 +1,2157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>sheetjs sample</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="sheetjs.css" />
+  <script src="sheetjs.js"></script>
+  <style>
+    body {
+      padding: 20px 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Sample</h1>
+  <p>
+    List of countries by population (United Nations)<br>
+    Source:
+    <a href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)" target="_blank">
+      https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)
+    </a>
+  </p>
+
+  <table class="sheetjs">
+    <caption>List of countries by population (United Nations)</caption>
+    <thead>
+      <tr>
+        <th rowspan="2">NO</th>
+        <th rowspan="2">Country/Territory</th>
+        <th rowspan="2">UN continental<br>region</th>
+        <th rowspan="2">UN statistical<br>subregion</th>
+        <th colspan="2">Population</th>
+        <th rowspan="2">Change</th>
+      </tr>
+      <tr>
+        <th>1 July 2018</th>
+        <th>1 July 2019</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>1</th>
+        <td>China</td>
+        <td>Asia</td>
+        <td>Eastern Asia</td>
+        <td align="right">1,427,647,786</td>
+        <td align="right">1,433,783,686</td>
+        <td align="right">0.43%</td>
+      </tr>
+      <tr>
+        <th>2</th>
+        <td>India</td>
+        <td>Asia</td>
+        <td>Southern Asia</td>
+        <td align="right">1,352,642,280</td>
+        <td align="right">1,366,417,754</td>
+        <td align="right">1.02%</td>
+      </tr>
+      <tr>
+        <th>3</th>
+        <td>United States</td>
+        <td>Americas</td>
+        <td>Northern America</td>
+        <td align="right">327,096,265</td>
+        <td align="right">329,064,917</td>
+        <td align="right">0.60%</td>
+      </tr>
+      <tr>
+        <th>4</th>
+        <td>Indonesia</td>
+        <td>Asia</td>
+        <td>South-eastern Asia</td>
+        <td align="right">267,670,543</td>
+        <td align="right">270,625,568</td>
+        <td align="right">1.10%</td>
+      </tr>
+      <tr>
+        <th>5</th>
+        <td>Pakistan</td>
+        <td>Asia</td>
+        <td>Southern Asia</td>
+        <td align="right">212,228,286</td>
+        <td align="right">216,565,318</td>
+        <td align="right">2.04%</td>
+      </tr>
+      <tr>
+        <th>6</th>
+        <td>Brazil</td>
+        <td>Americas</td>
+        <td>South America</td>
+        <td align="right">209,469,323</td>
+        <td align="right">211,049,527</td>
+        <td align="right">0.75%</td>
+      </tr>
+      <tr>
+        <th>7</th>
+        <td>Nigeria</td>
+        <td>Africa</td>
+        <td>Western Africa</td>
+        <td align="right">195,874,683</td>
+        <td align="right">200,963,599</td>
+        <td align="right">2.60%</td>
+      </tr>
+      <tr>
+        <th>8</th>
+        <td>Bangladesh</td>
+        <td>Asia</td>
+        <td>Southern Asia</td>
+        <td align="right">161,376,708</td>
+        <td align="right">163,046,161</td>
+        <td align="right">1.03%</td>
+      </tr>
+      <tr>
+        <th>9</th>
+        <td>Russia</td>
+        <td>Europe</td>
+        <td>Eastern Europe</td>
+        <td align="right">145,734,038</td>
+        <td align="right">145,872,256</td>
+        <td align="right">0.09%</td>
+      </tr>
+      <tr>
+        <th>10</th>
+        <td>Mexico</td>
+        <td>Americas</td>
+        <td>Central America</td>
+        <td align="right">126,190,788</td>
+        <td align="right">127,575,529</td>
+        <td align="right">1.10%</td>
+      </tr>
+      <tr>
+        <th>11</th>
+        <td>Japan</td>
+        <td>Asia</td>
+        <td>Eastern Asia</td>
+        <td align="right">127,202,192</td>
+        <td align="right">126,860,301</td>
+        <td align="right">-0.27%</td>
+      </tr>
+      <tr>
+        <th>12</th>
+        <td>Ethiopia</td>
+        <td>Africa</td>
+        <td>Eastern Africa</td>
+        <td align="right">109,224,414</td>
+        <td align="right">112,078,730</td>
+        <td align="right">2.61%</td>
+      </tr>
+      <tr>
+        <th>13</th>
+        <td>Philippines</td>
+        <td>Asia</td>
+        <td>South-eastern Asia</td>
+        <td align="right">106,651,394</td>
+        <td align="right">108,116,615</td>
+        <td align="right">1.37%</td>
+      </tr>
+      <tr>
+        <th>14</th>
+        <td>Egypt</td>
+        <td>Africa</td>
+        <td>Northern Africa</td>
+        <td align="right">98,423,598</td>
+        <td align="right">100,388,073</td>
+        <td align="right">2.00%</td>
+      </tr>
+      <tr>
+        <th>15</th>
+        <td>Vietnam</td>
+        <td>Asia</td>
+        <td>South-eastern Asia</td>
+        <td align="right">95,545,962</td>
+        <td align="right">96,462,106</td>
+        <td align="right">0.96%</td>
+      </tr>
+      <tr>
+        <th>16</th>
+        <td>DR Congo</td>
+        <td>Africa</td>
+        <td>Middle Africa</td>
+        <td align="right">84,068,091</td>
+        <td align="right">86,790,567</td>
+        <td align="right">3.24%</td>
+      </tr>
+      <tr>
+        <th>17</th>
+        <td>Germany</td>
+        <td>Europe</td>
+        <td>Western Europe</td>
+        <td align="right">83,124,418</td>
+        <td align="right">83,517,045</td>
+        <td align="right">0.47%</td>
+      </tr>
+      <tr>
+        <th>18</th>
+        <td>Turkey</td>
+        <td>Asia</td>
+        <td>Western Asia</td>
+        <td align="right">82,340,088</td>
+        <td align="right">83,429,615</td>
+        <td align="right">1.32%</td>
+      </tr>
+      <tr>
+        <th>19</th>
+        <td>Iran</td>
+        <td>Asia</td>
+        <td>Southern Asia</td>
+        <td align="right">81,800,188</td>
+        <td align="right">82,913,906</td>
+        <td align="right">1.36%</td>
+      </tr>
+      <tr>
+        <th>20</th>
+        <td>Thailand</td>
+        <td>Asia</td>
+        <td>South-eastern Asia</td>
+        <td align="right">68,863,514</td>
+        <td align="right">69,037,513</td>
+        <td align="right">0.25%</td>
+      </tr>
+      <tr>
+        <th>21</th>
+        <td>United Kingdom</td>
+        <td>Europe</td>
+        <td>Northern Europe</td>
+        <td align="right">67,141,684</td>
+        <td align="right">67,530,172</td>
+        <td align="right">0.58%</td>
+      </tr>
+      <tr>
+        <th>22</th>
+        <td>France</td>
+        <td>Europe</td>
+        <td>Western Europe</td>
+        <td align="right">64,990,511</td>
+        <td align="right">65,129,728</td>
+        <td align="right">0.21%</td>
+      </tr>
+      <tr>
+        <th>23</th>
+        <td>Italy</td>
+        <td>Europe</td>
+        <td>Southern Europe</td>
+        <td align="right">60,627,291</td>
+        <td align="right">60,550,075</td>
+        <td align="right">-0.13%</td>
+      </tr>
+      <tr>
+        <th>24</th>
+        <td>South Africa</td>
+        <td>Africa</td>
+        <td>Southern Africa</td>
+        <td align="right">57,792,518</td>
+        <td align="right">58,558,270</td>
+        <td align="right">1.33%</td>
+      </tr>
+      <tr>
+        <th>25</th>
+        <td>Tanzania</td>
+        <td>Africa</td>
+        <td>Eastern Africa</td>
+        <td align="right">56,313,438</td>
+        <td align="right">58,005,463</td>
+        <td align="right">3.00%</td>
+      </tr>
+      <tr>
+        <th>26</th>
+        <td>Myanmar</td>
+        <td>Asia</td>
+        <td>South-eastern Asia</td>
+        <td align="right">53,708,320</td>
+        <td align="right">54,045,420</td>
+        <td align="right">0.63%</td>
+      </tr>
+      <tr>
+        <th>27</th>
+        <td>Kenya</td>
+        <td>Africa</td>
+        <td>Eastern Africa</td>
+        <td align="right">51,392,565</td>
+        <td align="right">52,573,973</td>
+        <td align="right">2.30%</td>
+      </tr>
+      <tr>
+        <th>28</th>
+        <td>South Korea</td>
+        <td>Asia</td>
+        <td>Eastern Asia</td>
+        <td align="right">51,171,706</td>
+        <td align="right">51,225,308</td>
+        <td align="right">0.10%</td>
+      </tr>
+      <tr>
+        <th>29</th>
+        <td>Colombia</td>
+        <td>Americas</td>
+        <td>South America</td>
+        <td align="right">49,661,048</td>
+        <td align="right">50,339,443</td>
+        <td align="right">1.37%</td>
+      </tr>
+      <tr>
+        <th>30</th>
+        <td>Spain</td>
+        <td>Europe</td>
+        <td>Southern Europe</td>
+        <td align="right">46,692,858</td>
+        <td align="right">46,736,776</td>
+        <td align="right">0.09%</td>
+      </tr>
+      <tr>
+        <th>31</th>
+        <td>Argentina</td>
+        <td>Americas</td>
+        <td>South America</td>
+        <td align="right">44,361,150</td>
+        <td align="right">44,780,677</td>
+        <td align="right">0.95%</td>
+      </tr>
+      <tr>
+        <th>32</th>
+        <td>Uganda</td>
+        <td>Africa</td>
+        <td>Eastern Africa</td>
+        <td align="right">42,729,036</td>
+        <td align="right">44,269,594</td>
+        <td align="right">3.61%</td>
+      </tr>
+      <tr>
+        <th>33</th>
+        <td>Ukraine</td>
+        <td>Europe</td>
+        <td>Eastern Europe</td>
+        <td align="right">44,246,156</td>
+        <td align="right">43,993,638</td>
+        <td align="right">-0.57%</td>
+      </tr>
+      <tr>
+        <th>34</th>
+        <td>Algeria</td>
+        <td>Africa</td>
+        <td>Northern Africa</td>
+        <td align="right">42,228,408</td>
+        <td align="right">43,053,054</td>
+        <td align="right">1.95%</td>
+      </tr>
+      <tr>
+        <th>35</th>
+        <td>Sudan</td>
+        <td>Africa</td>
+        <td>Northern Africa</td>
+        <td align="right">41,801,533</td>
+        <td align="right">42,813,238</td>
+        <td align="right">2.42%</td>
+      </tr>
+      <tr>
+        <th>36</th>
+        <td>Iraq</td>
+        <td>Asia</td>
+        <td>Western Asia</td>
+        <td align="right">38,433,600</td>
+        <td align="right">39,309,783</td>
+        <td align="right">2.28%</td>
+      </tr>
+      <tr>
+        <th>37</th>
+        <td>Afghanistan</td>
+        <td>Asia</td>
+        <td>Southern Asia</td>
+        <td align="right">37,171,921</td>
+        <td align="right">38,041,754</td>
+        <td align="right">2.34%</td>
+      </tr>
+      <tr>
+        <th>38</th>
+        <td>Poland</td>
+        <td>Europe</td>
+        <td>Eastern Europe</td>
+        <td align="right">37,921,592</td>
+        <td align="right">37,887,768</td>
+        <td align="right">-0.09%</td>
+      </tr>
+      <tr>
+        <th>39</th>
+        <td>Canada</td>
+        <td>Americas</td>
+        <td>Northern America</td>
+        <td align="right">37,074,562</td>
+        <td align="right">37,411,047</td>
+        <td align="right">0.91%</td>
+      </tr>
+      <tr>
+        <th>40</th>
+        <td>Morocco</td>
+        <td>Africa</td>
+        <td>Northern Africa</td>
+        <td align="right">36,029,093</td>
+        <td align="right">36,471,769</td>
+        <td align="right">1.23%</td>
+      </tr>
+      <tr>
+        <th>41</th>
+        <td>Saudi Arabia</td>
+        <td>Asia</td>
+        <td>Western Asia</td>
+        <td align="right">33,702,756</td>
+        <td align="right">34,268,528</td>
+        <td align="right">1.68%</td>
+      </tr>
+      <tr>
+        <th>42</th>
+        <td>Uzbekistan</td>
+        <td>Asia</td>
+        <td>Central Asia</td>
+        <td align="right">32,476,244</td>
+        <td align="right">32,981,716</td>
+        <td align="right">1.56%</td>
+      </tr>
+      <tr>
+        <th>43</th>
+        <td>Peru</td>
+        <td>Americas</td>
+        <td>South America</td>
+        <td align="right">31,989,260</td>
+        <td align="right">32,510,453</td>
+        <td align="right">1.63%</td>
+      </tr>
+      <tr>
+        <th>44</th>
+        <td>Malaysia</td>
+        <td>Asia</td>
+        <td>South-eastern Asia</td>
+        <td align="right">31,528,033</td>
+        <td align="right">31,949,777</td>
+        <td align="right">1.34%</td>
+      </tr>
+      <tr>
+        <th>45</th>
+        <td>Angola</td>
+        <td>Africa</td>
+        <td>Middle Africa</td>
+        <td align="right">30,809,787</td>
+        <td align="right">31,825,295</td>
+        <td align="right">3.30%</td>
+      </tr>
+      <tr>
+        <th>46</th>
+        <td>Mozambique</td>
+        <td>Africa</td>
+        <td>Eastern Africa</td>
+        <td align="right">29,496,004</td>
+        <td align="right">30,366,036</td>
+        <td align="right">2.95%</td>
+      </tr>
+      <tr>
+        <th>47</th>
+        <td>Yemen</td>
+        <td>Asia</td>
+        <td>Western Asia</td>
+        <td align="right">28,498,683</td>
+        <td align="right">29,161,922</td>
+        <td align="right">2.33%</td>
+      </tr>
+      <tr>
+        <th>48</th>
+        <td>Ghana</td>
+        <td>Africa</td>
+        <td>Western Africa</td>
+        <td align="right">28,206,728</td>
+        <td align="right">28,833,629</td>
+        <td align="right">2.22%</td>
+      </tr>
+      <tr>
+        <th>49</th>
+        <td>Nepal</td>
+        <td>Asia</td>
+        <td>Southern Asia</td>
+        <td align="right">28,095,714</td>
+        <td align="right">28,608,710</td>
+        <td align="right">1.83%</td>
+      </tr>
+      <tr>
+        <th>50</th>
+        <td>Venezuela</td>
+        <td>Americas</td>
+        <td>South America</td>
+        <td align="right">28,887,118</td>
+        <td align="right">28,515,829</td>
+        <td align="right">-1.29%</td>
+      </tr>
+      <tr>
+        <th>51</th>
+        <td>Madagascar</td>
+        <td>Africa</td>
+        <td>Eastern Africa</td>
+        <td align="right">26,262,313</td>
+        <td align="right">26,969,307</td>
+        <td align="right">2.69%</td>
+      </tr>
+      <tr>
+        <th>52</th>
+        <td>North Korea</td>
+        <td>Asia</td>
+        <td>Eastern Asia</td>
+        <td align="right">25,549,604</td>
+        <td align="right">25,666,161</td>
+        <td align="right">0.46%</td>
+      </tr>
+      <tr>
+        <th>53</th>
+        <td>Ivory Coast</td>
+        <td>Africa</td>
+        <td>Western Africa</td>
+        <td align="right">25,069,230</td>
+        <td align="right">25,716,544</td>
+        <td align="right">2.58%</td>
+      </tr>
+      <tr>
+        <th>54</th>
+        <td>Cameroon</td>
+        <td>Africa</td>
+        <td>Middle Africa</td>
+        <td align="right">25,216,267</td>
+        <td align="right">25,876,380</td>
+        <td align="right">2.62%</td>
+      </tr>
+      <tr>
+        <th>55</th>
+        <td>Australia</td>
+        <td>Oceania</td>
+        <td>Australia and New Zealand</td>
+        <td align="right">24,898,152</td>
+        <td align="right">25,203,198</td>
+        <td align="right">1.23%</td>
+      </tr>
+      <tr>
+        <th>56</th>
+        <td>Taiwan</td>
+        <td>Asia</td>
+        <td>Eastern Asia</td>
+        <td align="right">23,726,460</td>
+        <td align="right">23,773,876</td>
+        <td align="right">0.20%</td>
+      </tr>
+      <tr>
+        <th>57</th>
+        <td>Niger</td>
+        <td>Africa</td>
+        <td>Western Africa</td>
+        <td align="right">22,442,822</td>
+        <td align="right">23,310,715</td>
+        <td align="right">3.87%</td>
+      </tr>
+      <tr>
+        <th>58</th>
+        <td>Sri Lanka</td>
+        <td>Asia</td>
+        <td>Southern Asia</td>
+        <td align="right">21,228,763</td>
+        <td align="right">21,323,733</td>
+        <td align="right">0.45%</td>
+      </tr>
+      <tr>
+        <th>59</th>
+        <td>Burkina Faso</td>
+        <td>Africa</td>
+        <td>Western Africa</td>
+        <td align="right">19,751,466</td>
+        <td align="right">20,321,378</td>
+        <td align="right">2.89%</td>
+      </tr>
+      <tr>
+        <th>60</th>
+        <td>Mali</td>
+        <td>Africa</td>
+        <td>Western Africa</td>
+        <td align="right">19,077,749</td>
+        <td align="right">19,658,031</td>
+        <td align="right">3.04%</td>
+      </tr>
+      <tr>
+        <th>61</th>
+        <td>Romania</td>
+        <td>Europe</td>
+        <td>Eastern Europe</td>
+        <td align="right">19,506,114</td>
+        <td align="right">19,364,557</td>
+        <td align="right">-0.73%</td>
+      </tr>
+      <tr>
+        <th>62</th>
+        <td>Malawi</td>
+        <td>Africa</td>
+        <td>Eastern Africa</td>
+        <td align="right">18,143,217</td>
+        <td align="right">18,628,747</td>
+        <td align="right">2.68%</td>
+      </tr>
+      <tr>
+        <th>63</th>
+        <td>Chile</td>
+        <td>Americas</td>
+        <td>South America</td>
+        <td align="right">18,729,160</td>
+        <td align="right">18,952,038</td>
+        <td align="right">1.19%</td>
+      </tr>
+      <tr>
+        <th>64</th>
+        <td>Kazakhstan</td>
+        <td>Asia</td>
+        <td>Central Asia</td>
+        <td align="right">18,319,618</td>
+        <td align="right">18,551,427</td>
+        <td align="right">1.27%</td>
+      </tr>
+      <tr>
+        <th>65</th>
+        <td>Zambia</td>
+        <td>Africa</td>
+        <td>Eastern Africa</td>
+        <td align="right">17,351,708</td>
+        <td align="right">17,861,030</td>
+        <td align="right">2.94%</td>
+      </tr>
+      <tr>
+        <th>66</th>
+        <td>Guatemala</td>
+        <td>Americas</td>
+        <td>Central America</td>
+        <td align="right">17,247,849</td>
+        <td align="right">17,581,472</td>
+        <td align="right">1.93%</td>
+      </tr>
+      <tr>
+        <th>67</th>
+        <td>Ecuador</td>
+        <td>Americas</td>
+        <td>South America</td>
+        <td align="right">17,084,358</td>
+        <td align="right">17,373,662</td>
+        <td align="right">1.69%</td>
+      </tr>
+      <tr>
+        <th>68</th>
+        <td>Netherlands</td>
+        <td>Europe</td>
+        <td>Western Europe</td>
+        <td align="right">17,059,560</td>
+        <td align="right">17,097,130</td>
+        <td align="right">0.22%</td>
+      </tr>
+      <tr>
+        <th>69</th>
+        <td>Syria</td>
+        <td>Asia</td>
+        <td>Western Asia</td>
+        <td align="right">16,945,057</td>
+        <td align="right">17,070,135</td>
+        <td align="right">0.74%</td>
+      </tr>
+      <tr>
+        <th>70</th>
+        <td>Cambodia</td>
+        <td>Asia</td>
+        <td>South-eastern Asia</td>
+        <td align="right">16,249,792</td>
+        <td align="right">16,486,542</td>
+        <td align="right">1.46%</td>
+      </tr>
+      <tr>
+        <th>71</th>
+        <td>Senegal</td>
+        <td>Africa</td>
+        <td>Western Africa</td>
+        <td align="right">15,854,323</td>
+        <td align="right">16,296,364</td>
+        <td align="right">2.79%</td>
+      </tr>
+      <tr>
+        <th>72</th>
+        <td>Chad</td>
+        <td>Africa</td>
+        <td>Middle Africa</td>
+        <td align="right">15,477,729</td>
+        <td align="right">15,946,876</td>
+        <td align="right">3.03%</td>
+      </tr>
+      <tr>
+        <th>73</th>
+        <td>Somalia</td>
+        <td>Africa</td>
+        <td>Eastern Africa</td>
+        <td align="right">15,008,226</td>
+        <td align="right">15,442,905</td>
+        <td align="right">2.90%</td>
+      </tr>
+      <tr>
+        <th>74</th>
+        <td>Zimbabwe</td>
+        <td>Africa</td>
+        <td>Eastern Africa</td>
+        <td align="right">14,438,802</td>
+        <td align="right">14,645,468</td>
+        <td align="right">1.43%</td>
+      </tr>
+      <tr>
+        <th>75</th>
+        <td>Guinea</td>
+        <td>Africa</td>
+        <td>Western Africa</td>
+        <td align="right">12,414,293</td>
+        <td align="right">12,771,246</td>
+        <td align="right">2.88%</td>
+      </tr>
+      <tr>
+        <th>76</th>
+        <td>Rwanda</td>
+        <td>Africa</td>
+        <td>Eastern Africa</td>
+        <td align="right">12,301,970</td>
+        <td align="right">12,626,950</td>
+        <td align="right">2.64%</td>
+      </tr>
+      <tr>
+        <th>77</th>
+        <td>Benin</td>
+        <td>Africa</td>
+        <td>Western Africa</td>
+        <td align="right">11,485,044</td>
+        <td align="right">11,801,151</td>
+        <td align="right">2.75%</td>
+      </tr>
+      <tr>
+        <th>78</th>
+        <td>Tunisia</td>
+        <td>Africa</td>
+        <td>Northern Africa</td>
+        <td align="right">11,565,201</td>
+        <td align="right">11,694,719</td>
+        <td align="right">1.12%</td>
+      </tr>
+      <tr>
+        <th>79</th>
+        <td>Belgium</td>
+        <td>Europe</td>
+        <td>Western Europe</td>
+        <td align="right">11,482,178</td>
+        <td align="right">11,539,328</td>
+        <td align="right">0.50%</td>
+      </tr>
+      <tr>
+        <th>80</th>
+        <td>Bolivia</td>
+        <td>Americas</td>
+        <td>South America</td>
+        <td align="right">11,353,142</td>
+        <td align="right">11,513,100</td>
+        <td align="right">1.41%</td>
+      </tr>
+      <tr>
+        <th>81</th>
+        <td>Cuba</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">11,338,134</td>
+        <td align="right">11,333,483</td>
+        <td align="right">-0.04%</td>
+      </tr>
+      <tr>
+        <th>82</th>
+        <td>Haiti</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">11,123,178</td>
+        <td align="right">11,263,770</td>
+        <td align="right">1.26%</td>
+      </tr>
+      <tr>
+        <th>83</th>
+        <td>South Sudan</td>
+        <td>Africa</td>
+        <td>Eastern Africa</td>
+        <td align="right">10,975,927</td>
+        <td align="right">11,062,113</td>
+        <td align="right">0.79%</td>
+      </tr>
+      <tr>
+        <th>84</th>
+        <td>Burundi</td>
+        <td>Africa</td>
+        <td>Eastern Africa</td>
+        <td align="right">10,524,117</td>
+        <td align="right">10,864,245</td>
+        <td align="right">3.23%</td>
+      </tr>
+      <tr>
+        <th>85</th>
+        <td>Dominican Republic</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">10,627,141</td>
+        <td align="right">10,738,958</td>
+        <td align="right">1.05%</td>
+      </tr>
+      <tr>
+        <th>86</th>
+        <td>Czech Republic</td>
+        <td>Europe</td>
+        <td>Eastern Europe</td>
+        <td align="right">10,665,677</td>
+        <td align="right">10,689,209</td>
+        <td align="right">0.22%</td>
+      </tr>
+      <tr>
+        <th>87</th>
+        <td>Greece</td>
+        <td>Europe</td>
+        <td>Southern Europe</td>
+        <td align="right">10,522,246</td>
+        <td align="right">10,473,455</td>
+        <td align="right">-0.46%</td>
+      </tr>
+      <tr>
+        <th>88</th>
+        <td>Portugal</td>
+        <td>Europe</td>
+        <td>Southern Europe</td>
+        <td align="right">10,256,193</td>
+        <td align="right">10,226,187</td>
+        <td align="right">-0.29%</td>
+      </tr>
+      <tr>
+        <th>89</th>
+        <td>Jordan</td>
+        <td>Asia</td>
+        <td>Western Asia</td>
+        <td align="right">9,965,318</td>
+        <td align="right">10,101,694</td>
+        <td align="right">1.37%</td>
+      </tr>
+      <tr>
+        <th>90</th>
+        <td>Azerbaijan</td>
+        <td>Asia</td>
+        <td>Western Asia</td>
+        <td align="right">9,949,537</td>
+        <td align="right">10,047,718</td>
+        <td align="right">0.99%</td>
+      </tr>
+      <tr>
+        <th>91</th>
+        <td>Sweden</td>
+        <td>Europe</td>
+        <td>Northern Europe</td>
+        <td align="right">9,971,638</td>
+        <td align="right">10,036,379</td>
+        <td align="right">0.65%</td>
+      </tr>
+      <tr>
+        <th>92</th>
+        <td>United Arab Emirates</td>
+        <td>Asia</td>
+        <td>Western Asia</td>
+        <td align="right">9,630,959</td>
+        <td align="right">9,770,529</td>
+        <td align="right">1.45%</td>
+      </tr>
+      <tr>
+        <th>93</th>
+        <td>Honduras</td>
+        <td>Americas</td>
+        <td>Central America</td>
+        <td align="right">9,587,522</td>
+        <td align="right">9,746,117</td>
+        <td align="right">1.65%</td>
+      </tr>
+      <tr>
+        <th>94</th>
+        <td>Hungary</td>
+        <td>Europe</td>
+        <td>Eastern Europe</td>
+        <td align="right">9,707,499</td>
+        <td align="right">9,684,679</td>
+        <td align="right">-0.24%</td>
+      </tr>
+      <tr>
+        <th>95</th>
+        <td>Belarus</td>
+        <td>Europe</td>
+        <td>Eastern Europe</td>
+        <td align="right">9,452,617</td>
+        <td align="right">9,452,411</td>
+        <td align="right">0.00%</td>
+      </tr>
+      <tr>
+        <th>96</th>
+        <td>Tajikistan</td>
+        <td>Asia</td>
+        <td>Central Asia</td>
+        <td align="right">9,100,835</td>
+        <td align="right">9,321,018</td>
+        <td align="right">2.42%</td>
+      </tr>
+      <tr>
+        <th>97</th>
+        <td>Austria</td>
+        <td>Europe</td>
+        <td>Western Europe</td>
+        <td align="right">8,891,388</td>
+        <td align="right">8,955,102</td>
+        <td align="right">0.72%</td>
+      </tr>
+      <tr>
+        <th>98</th>
+        <td>Papua New Guinea</td>
+        <td>Oceania</td>
+        <td>Melanesia</td>
+        <td align="right">8,606,323</td>
+        <td align="right">8,776,109</td>
+        <td align="right">1.97%</td>
+      </tr>
+      <tr>
+        <th>99</th>
+        <td>Serbia</td>
+        <td>Europe</td>
+        <td>Southern Europe</td>
+        <td align="right">8,802,754</td>
+        <td align="right">8,772,235</td>
+        <td align="right">-0.35%</td>
+      </tr>
+      <tr>
+        <th>100</th>
+        <td>Switzerland</td>
+        <td>Europe</td>
+        <td>Western Europe</td>
+        <td align="right">8,525,611</td>
+        <td align="right">8,591,365</td>
+        <td align="right">0.77%</td>
+      </tr>
+      <tr>
+        <th>101</th>
+        <td>Israel</td>
+        <td>Asia</td>
+        <td>Western Asia</td>
+        <td align="right">8,381,516</td>
+        <td align="right">8,519,377</td>
+        <td align="right">1.64%</td>
+      </tr>
+      <tr>
+        <th>102</th>
+        <td>Togo</td>
+        <td>Africa</td>
+        <td>Western Africa</td>
+        <td align="right">7,889,093</td>
+        <td align="right">8,082,366</td>
+        <td align="right">2.45%</td>
+      </tr>
+      <tr>
+        <th>103</th>
+        <td>Sierra Leone</td>
+        <td>Africa</td>
+        <td>Western Africa</td>
+        <td align="right">7,650,150</td>
+        <td align="right">7,813,215</td>
+        <td align="right">2.13%</td>
+      </tr>
+      <tr>
+        <th>104</th>
+        <td>Hong Kong (China)</td>
+        <td>Asia</td>
+        <td>Eastern Asia</td>
+        <td align="right">7,371,730</td>
+        <td align="right">7,436,154</td>
+        <td align="right">0.87%</td>
+      </tr>
+      <tr>
+        <th>105</th>
+        <td>Laos</td>
+        <td>Asia</td>
+        <td>South-eastern Asia</td>
+        <td align="right">7,061,507</td>
+        <td align="right">7,169,455</td>
+        <td align="right">1.53%</td>
+      </tr>
+      <tr>
+        <th>106</th>
+        <td>Paraguay</td>
+        <td>Americas</td>
+        <td>South America</td>
+        <td align="right">6,956,066</td>
+        <td align="right">7,044,636</td>
+        <td align="right">1.27%</td>
+      </tr>
+      <tr>
+        <th>107</th>
+        <td>Bulgaria</td>
+        <td>Europe</td>
+        <td>Eastern Europe</td>
+        <td align="right">7,051,608</td>
+        <td align="right">7,000,119</td>
+        <td align="right">-0.73%</td>
+      </tr>
+      <tr>
+        <th>108</th>
+        <td>Lebanon</td>
+        <td>Asia</td>
+        <td>Western Asia</td>
+        <td align="right">6,859,408</td>
+        <td align="right">6,855,713</td>
+        <td align="right">-0.05%</td>
+      </tr>
+      <tr>
+        <th>109</th>
+        <td>Libya</td>
+        <td>Africa</td>
+        <td>Northern Africa</td>
+        <td align="right">6,678,559</td>
+        <td align="right">6,777,452</td>
+        <td align="right">1.48%</td>
+      </tr>
+      <tr>
+        <th>110</th>
+        <td>Nicaragua</td>
+        <td>Americas</td>
+        <td>Central America</td>
+        <td align="right">6,465,501</td>
+        <td align="right">6,545,502</td>
+        <td align="right">1.24%</td>
+      </tr>
+      <tr>
+        <th>111</th>
+        <td>El Salvador</td>
+        <td>Americas</td>
+        <td>Central America</td>
+        <td align="right">6,420,746</td>
+        <td align="right">6,453,553</td>
+        <td align="right">0.51%</td>
+      </tr>
+      <tr>
+        <th>112</th>
+        <td>Kyrgyzstan</td>
+        <td>Asia</td>
+        <td>Central Asia</td>
+        <td align="right">6,304,030</td>
+        <td align="right">6,415,850</td>
+        <td align="right">1.77%</td>
+      </tr>
+      <tr>
+        <th>113</th>
+        <td>Turkmenistan</td>
+        <td>Asia</td>
+        <td>Central Asia</td>
+        <td align="right">5,850,901</td>
+        <td align="right">5,942,089</td>
+        <td align="right">1.56%</td>
+      </tr>
+      <tr>
+        <th>114</th>
+        <td>Singapore</td>
+        <td>Asia</td>
+        <td>South-eastern Asia</td>
+        <td align="right">5,757,499</td>
+        <td align="right">5,804,337</td>
+        <td align="right">0.81%</td>
+      </tr>
+      <tr>
+        <th>115</th>
+        <td>Denmark</td>
+        <td>Europe</td>
+        <td>Northern Europe</td>
+        <td align="right">5,752,126</td>
+        <td align="right">5,771,876</td>
+        <td align="right">0.34%</td>
+      </tr>
+      <tr>
+        <th>116</th>
+        <td>Finland</td>
+        <td>Europe</td>
+        <td>Northern Europe</td>
+        <td align="right">5,522,576</td>
+        <td align="right">5,532,156</td>
+        <td align="right">0.17%</td>
+      </tr>
+      <tr>
+        <th>117</th>
+        <td>Slovakia</td>
+        <td>Europe</td>
+        <td>Eastern Europe</td>
+        <td align="right">5,453,014</td>
+        <td align="right">5,457,013</td>
+        <td align="right">0.07%</td>
+      </tr>
+      <tr>
+        <th>118</th>
+        <td>Congo</td>
+        <td>Africa</td>
+        <td>Middle Africa</td>
+        <td align="right">5,244,359</td>
+        <td align="right">5,380,508</td>
+        <td align="right">2.60%</td>
+      </tr>
+      <tr>
+        <th>119</th>
+        <td>Norway</td>
+        <td>Europe</td>
+        <td>Northern Europe</td>
+        <td align="right">5,337,962</td>
+        <td align="right">5,378,857</td>
+        <td align="right">0.77%</td>
+      </tr>
+      <tr>
+        <th>120</th>
+        <td>Costa Rica</td>
+        <td>Americas</td>
+        <td>Central America</td>
+        <td align="right">4,999,441</td>
+        <td align="right">5,047,561</td>
+        <td align="right">0.96%</td>
+      </tr>
+      <tr>
+        <th>121</th>
+        <td>Palestine</td>
+        <td>Asia</td>
+        <td>Western Asia</td>
+        <td align="right">4,862,979</td>
+        <td align="right">4,981,420</td>
+        <td align="right">2.44%</td>
+      </tr>
+      <tr>
+        <th>122</th>
+        <td>Oman</td>
+        <td>Asia</td>
+        <td>Western Asia</td>
+        <td align="right">4,829,473</td>
+        <td align="right">4,974,986</td>
+        <td align="right">3.01%</td>
+      </tr>
+      <tr>
+        <th>123</th>
+        <td>Liberia</td>
+        <td>Africa</td>
+        <td>Western Africa</td>
+        <td align="right">4,818,973</td>
+        <td align="right">4,937,374</td>
+        <td align="right">2.46%</td>
+      </tr>
+      <tr>
+        <th>124</th>
+        <td>Ireland</td>
+        <td>Europe</td>
+        <td>Northern Europe</td>
+        <td align="right">4,818,690</td>
+        <td align="right">4,882,495</td>
+        <td align="right">1.32%</td>
+      </tr>
+      <tr>
+        <th>125</th>
+        <td>New Zealand</td>
+        <td>Oceania</td>
+        <td>Australia and New Zealand</td>
+        <td align="right">4,743,131</td>
+        <td align="right">4,783,063</td>
+        <td align="right">0.84%</td>
+      </tr>
+      <tr>
+        <th>126</th>
+        <td>Central African Republic</td>
+        <td>Africa</td>
+        <td>Middle Africa</td>
+        <td align="right">4,666,368</td>
+        <td align="right">4,745,185</td>
+        <td align="right">1.69%</td>
+      </tr>
+      <tr>
+        <th>127</th>
+        <td>Mauritania</td>
+        <td>Africa</td>
+        <td>Western Africa</td>
+        <td align="right">4,403,313</td>
+        <td align="right">4,525,696</td>
+        <td align="right">2.78%</td>
+      </tr>
+      <tr>
+        <th>128</th>
+        <td>Panama</td>
+        <td>Americas</td>
+        <td>Central America</td>
+        <td align="right">4,176,869</td>
+        <td align="right">4,246,439</td>
+        <td align="right">1.67%</td>
+      </tr>
+      <tr>
+        <th>129</th>
+        <td>Kuwait</td>
+        <td>Asia</td>
+        <td>Western Asia</td>
+        <td align="right">4,137,312</td>
+        <td align="right">4,207,083</td>
+        <td align="right">1.69%</td>
+      </tr>
+      <tr>
+        <th>130</th>
+        <td>Croatia</td>
+        <td>Europe</td>
+        <td>Southern Europe</td>
+        <td align="right">4,156,405</td>
+        <td align="right">4,130,304</td>
+        <td align="right">-0.63%</td>
+      </tr>
+      <tr>
+        <th>131</th>
+        <td>Moldova</td>
+        <td>Europe</td>
+        <td>Eastern Europe</td>
+        <td align="right">4,051,944</td>
+        <td align="right">4,043,263</td>
+        <td align="right">-0.21%</td>
+      </tr>
+      <tr>
+        <th>132</th>
+        <td>Georgia</td>
+        <td>Asia</td>
+        <td>Western Asia</td>
+        <td align="right">4,002,942</td>
+        <td align="right">3,996,765</td>
+        <td align="right">-0.15%</td>
+      </tr>
+      <tr>
+        <th>133</th>
+        <td>Eritrea</td>
+        <td>Africa</td>
+        <td>Eastern Africa</td>
+        <td align="right">3,452,786</td>
+        <td align="right">3,497,117</td>
+        <td align="right">1.28%</td>
+      </tr>
+      <tr>
+        <th>134</th>
+        <td>Uruguay</td>
+        <td>Americas</td>
+        <td>South America</td>
+        <td align="right">3,449,285</td>
+        <td align="right">3,461,734</td>
+        <td align="right">0.36%</td>
+      </tr>
+      <tr>
+        <th>135</th>
+        <td>Bosnia and Herzegovina</td>
+        <td>Europe</td>
+        <td>Southern Europe</td>
+        <td align="right">3,323,925</td>
+        <td align="right">3,301,000</td>
+        <td align="right">-0.69%</td>
+      </tr>
+      <tr>
+        <th>136</th>
+        <td>Mongolia</td>
+        <td>Asia</td>
+        <td>Eastern Asia</td>
+        <td align="right">3,170,216</td>
+        <td align="right">3,225,167</td>
+        <td align="right">1.73%</td>
+      </tr>
+      <tr>
+        <th>137</th>
+        <td>Armenia</td>
+        <td>Asia</td>
+        <td>Western Asia</td>
+        <td align="right">2,951,745</td>
+        <td align="right">2,957,731</td>
+        <td align="right">0.20%</td>
+      </tr>
+      <tr>
+        <th>138</th>
+        <td>Jamaica</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">2,934,847</td>
+        <td align="right">2,948,279</td>
+        <td align="right">0.46%</td>
+      </tr>
+      <tr>
+        <th>139</th>
+        <td>Puerto Rico (United States)</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">3,039,596</td>
+        <td align="right">2,933,408</td>
+        <td align="right">-3.49%</td>
+      </tr>
+      <tr>
+        <th>140</th>
+        <td>Albania</td>
+        <td>Europe</td>
+        <td>Southern Europe</td>
+        <td align="right">2,882,740</td>
+        <td align="right">2,880,917</td>
+        <td align="right">-0.06%</td>
+      </tr>
+      <tr>
+        <th>141</th>
+        <td>Qatar</td>
+        <td>Asia</td>
+        <td>Western Asia</td>
+        <td align="right">2,781,682</td>
+        <td align="right">2,832,067</td>
+        <td align="right">1.81%</td>
+      </tr>
+      <tr>
+        <th>142</th>
+        <td>Lithuania</td>
+        <td>Europe</td>
+        <td>Northern Europe</td>
+        <td align="right">2,801,264</td>
+        <td align="right">2,759,627</td>
+        <td align="right">-1.49%</td>
+      </tr>
+      <tr>
+        <th>143</th>
+        <td>Namibia</td>
+        <td>Africa</td>
+        <td>Southern Africa</td>
+        <td align="right">2,448,301</td>
+        <td align="right">2,494,530</td>
+        <td align="right">1.89%</td>
+      </tr>
+      <tr>
+        <th>144</th>
+        <td>Gambia</td>
+        <td>Africa</td>
+        <td>Western Africa</td>
+        <td align="right">2,280,094</td>
+        <td align="right">2,347,706</td>
+        <td align="right">2.97%</td>
+      </tr>
+      <tr>
+        <th>145</th>
+        <td>Botswana</td>
+        <td>Africa</td>
+        <td>Southern Africa</td>
+        <td align="right">2,254,068</td>
+        <td align="right">2,303,697</td>
+        <td align="right">2.20%</td>
+      </tr>
+      <tr>
+        <th>146</th>
+        <td>Gabon</td>
+        <td>Africa</td>
+        <td>Middle Africa</td>
+        <td align="right">2,119,275</td>
+        <td align="right">2,172,579</td>
+        <td align="right">2.52%</td>
+      </tr>
+      <tr>
+        <th>147</th>
+        <td>Lesotho</td>
+        <td>Africa</td>
+        <td>Southern Africa</td>
+        <td align="right">2,108,328</td>
+        <td align="right">2,125,268</td>
+        <td align="right">0.80%</td>
+      </tr>
+      <tr>
+        <th>148</th>
+        <td>North Macedonia</td>
+        <td>Europe</td>
+        <td>Southern Europe</td>
+        <td align="right">2,082,957</td>
+        <td align="right">2,083,459</td>
+        <td align="right">0.02%</td>
+      </tr>
+      <tr>
+        <th>149</th>
+        <td>Slovenia</td>
+        <td>Europe</td>
+        <td>Southern Europe</td>
+        <td align="right">2,077,837</td>
+        <td align="right">2,078,654</td>
+        <td align="right">0.04%</td>
+      </tr>
+      <tr>
+        <th>150</th>
+        <td>Guinea-Bissau</td>
+        <td>Africa</td>
+        <td>Western Africa</td>
+        <td align="right">1,874,303</td>
+        <td align="right">1,920,922</td>
+        <td align="right">2.49%</td>
+      </tr>
+      <tr>
+        <th>151</th>
+        <td>Latvia</td>
+        <td>Europe</td>
+        <td>Northern Europe</td>
+        <td align="right">1,928,459</td>
+        <td align="right">1,906,743</td>
+        <td align="right">-1.13%</td>
+      </tr>
+      <tr>
+        <th>152</th>
+        <td>Bahrain</td>
+        <td>Asia</td>
+        <td>Western Asia</td>
+        <td align="right">1,569,446</td>
+        <td align="right">1,641,172</td>
+        <td align="right">4.57%</td>
+      </tr>
+      <tr>
+        <th>153</th>
+        <td>Trinidad and Tobago</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">1,389,843</td>
+        <td align="right">1,394,973</td>
+        <td align="right">0.37%</td>
+      </tr>
+      <tr>
+        <th>154</th>
+        <td>Equatorial Guinea</td>
+        <td>Africa</td>
+        <td>Middle Africa</td>
+        <td align="right">1,308,975</td>
+        <td align="right">1,355,986</td>
+        <td align="right">3.59%</td>
+      </tr>
+      <tr>
+        <th>155</th>
+        <td>Estonia</td>
+        <td>Europe</td>
+        <td>Northern Europe</td>
+        <td align="right">1,322,920</td>
+        <td align="right">1,325,648</td>
+        <td align="right">0.21%</td>
+      </tr>
+      <tr>
+        <th>156</th>
+        <td>East Timor</td>
+        <td>Asia</td>
+        <td>South-eastern Asia</td>
+        <td align="right">1,267,974</td>
+        <td align="right">1,293,119</td>
+        <td align="right">1.98%</td>
+      </tr>
+      <tr>
+        <th>157</th>
+        <td>Mauritius</td>
+        <td>Africa</td>
+        <td>Eastern Africa</td>
+        <td align="right">1,189,265</td>
+        <td align="right">1,198,575</td>
+        <td align="right">0.78%</td>
+      </tr>
+      <tr>
+        <th>158</th>
+        <td>Cyprus</td>
+        <td>Asia</td>
+        <td>Western Asia</td>
+        <td align="right">1,170,125</td>
+        <td align="right">1,179,551</td>
+        <td align="right">0.81%</td>
+      </tr>
+      <tr>
+        <th>159</th>
+        <td>Eswatini</td>
+        <td>Africa</td>
+        <td>Southern Africa</td>
+        <td align="right">1,136,281</td>
+        <td align="right">1,148,130</td>
+        <td align="right">1.04%</td>
+      </tr>
+      <tr>
+        <th>160</th>
+        <td>Djibouti</td>
+        <td>Africa</td>
+        <td>Eastern Africa</td>
+        <td align="right">958,923</td>
+        <td align="right">973,560</td>
+        <td align="right">1.53%</td>
+      </tr>
+      <tr>
+        <th>161</th>
+        <td>Fiji</td>
+        <td>Oceania</td>
+        <td>Melanesia</td>
+        <td align="right">883,483</td>
+        <td align="right">889,953</td>
+        <td align="right">0.73%</td>
+      </tr>
+      <tr>
+        <th>162</th>
+        <td>Réunion (France)</td>
+        <td>Africa</td>
+        <td>Eastern Africa</td>
+        <td align="right">882,526</td>
+        <td align="right">888,927</td>
+        <td align="right">0.73%</td>
+      </tr>
+      <tr>
+        <th>163</th>
+        <td>Comoros</td>
+        <td>Africa</td>
+        <td>Eastern Africa</td>
+        <td align="right">832,322</td>
+        <td align="right">850,886</td>
+        <td align="right">2.23%</td>
+      </tr>
+      <tr>
+        <th>164</th>
+        <td>Guyana</td>
+        <td>Americas</td>
+        <td>South America</td>
+        <td align="right">779,006</td>
+        <td align="right">782,766</td>
+        <td align="right">0.48%</td>
+      </tr>
+      <tr>
+        <th>165</th>
+        <td>Bhutan</td>
+        <td>Asia</td>
+        <td>Southern Asia</td>
+        <td align="right">754,388</td>
+        <td align="right">763,092</td>
+        <td align="right">1.15%</td>
+      </tr>
+      <tr>
+        <th>166</th>
+        <td>Solomon Islands</td>
+        <td>Oceania</td>
+        <td>Melanesia</td>
+        <td align="right">652,857</td>
+        <td align="right">669,823</td>
+        <td align="right">2.60%</td>
+      </tr>
+      <tr>
+        <th>167</th>
+        <td>Macau (China)</td>
+        <td>Asia</td>
+        <td>Eastern Asia</td>
+        <td align="right">631,636</td>
+        <td align="right">640,445</td>
+        <td align="right">1.39%</td>
+      </tr>
+      <tr>
+        <th>168</th>
+        <td>Montenegro</td>
+        <td>Europe</td>
+        <td>Southern Europe</td>
+        <td align="right">627,809</td>
+        <td align="right">627,987</td>
+        <td align="right">0.03%</td>
+      </tr>
+      <tr>
+        <th>169</th>
+        <td>Luxembourg</td>
+        <td>Europe</td>
+        <td>Western Europe</td>
+        <td align="right">604,245</td>
+        <td align="right">615,729</td>
+        <td align="right">1.90%</td>
+      </tr>
+      <tr>
+        <th>170</th>
+        <td>Western Sahara</td>
+        <td>Africa</td>
+        <td>Northern Africa</td>
+        <td align="right">567,402</td>
+        <td align="right">582,463</td>
+        <td align="right">2.65%</td>
+      </tr>
+      <tr>
+        <th>171</th>
+        <td>Suriname</td>
+        <td>Americas</td>
+        <td>South America</td>
+        <td align="right">575,990</td>
+        <td align="right">581,372</td>
+        <td align="right">0.93%</td>
+      </tr>
+      <tr>
+        <th>172</th>
+        <td>Cape Verde</td>
+        <td>Africa</td>
+        <td>Western Africa</td>
+        <td align="right">543,767</td>
+        <td align="right">549,935</td>
+        <td align="right">1.13%</td>
+      </tr>
+      <tr>
+        <th>173</th>
+        <td>Maldives</td>
+        <td>Asia</td>
+        <td>Southern Asia</td>
+        <td align="right">515,696</td>
+        <td align="right">530,953</td>
+        <td align="right">2.96%</td>
+      </tr>
+      <tr>
+        <th>174</th>
+        <td>Guadeloupe (France)</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">446,928</td>
+        <td align="right">447,905</td>
+        <td align="right">0.22%</td>
+      </tr>
+      <tr>
+        <th>175</th>
+        <td>Malta</td>
+        <td>Europe</td>
+        <td>Southern Europe</td>
+        <td align="right">439,248</td>
+        <td align="right">440,372</td>
+        <td align="right">0.26%</td>
+      </tr>
+      <tr>
+        <th>176</th>
+        <td>Brunei</td>
+        <td>Asia</td>
+        <td>South-eastern Asia</td>
+        <td align="right">428,963</td>
+        <td align="right">433,285</td>
+        <td align="right">1.01%</td>
+      </tr>
+      <tr>
+        <th>177</th>
+        <td>Belize</td>
+        <td>Americas</td>
+        <td>Central America</td>
+        <td align="right">383,071</td>
+        <td align="right">390,353</td>
+        <td align="right">1.90%</td>
+      </tr>
+      <tr>
+        <th>178</th>
+        <td>Bahamas</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">385,637</td>
+        <td align="right">389,482</td>
+        <td align="right">1.00%</td>
+      </tr>
+      <tr>
+        <th>179</th>
+        <td>Martinique (France)</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">375,673</td>
+        <td align="right">375,554</td>
+        <td align="right">-0.03%</td>
+      </tr>
+      <tr>
+        <th>180</th>
+        <td>Iceland</td>
+        <td>Europe</td>
+        <td>Northern Europe</td>
+        <td align="right">336,713</td>
+        <td align="right">339,031</td>
+        <td align="right">0.69%</td>
+      </tr>
+      <tr>
+        <th>181</th>
+        <td>Vanuatu</td>
+        <td>Oceania</td>
+        <td>Melanesia</td>
+        <td align="right">292,680</td>
+        <td align="right">299,882</td>
+        <td align="right">2.46%</td>
+      </tr>
+      <tr>
+        <th>182</th>
+        <td>Barbados</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">286,641</td>
+        <td align="right">287,025</td>
+        <td align="right">0.13%</td>
+      </tr>
+      <tr>
+        <th>183</th>
+        <td>New Caledonia (France)</td>
+        <td>Oceania</td>
+        <td>Melanesia</td>
+        <td align="right">279,993</td>
+        <td align="right">282,750</td>
+        <td align="right">0.98%</td>
+      </tr>
+      <tr>
+        <th>184</th>
+        <td>French Guiana (France)</td>
+        <td>Americas</td>
+        <td>South America</td>
+        <td align="right">275,713</td>
+        <td align="right">282,731</td>
+        <td align="right">2.55%</td>
+      </tr>
+      <tr>
+        <th>185</th>
+        <td>French Polynesia (France)</td>
+        <td>Oceania</td>
+        <td>Polynesia</td>
+        <td align="right">277,679</td>
+        <td align="right">279,287</td>
+        <td align="right">0.58%</td>
+      </tr>
+      <tr>
+        <th>186</th>
+        <td>Mayotte (France)</td>
+        <td>Africa</td>
+        <td>Eastern Africa</td>
+        <td align="right">259,531</td>
+        <td align="right">266,150</td>
+        <td align="right">2.55%</td>
+      </tr>
+      <tr>
+        <th>187</th>
+        <td>São Tomé and Príncipe</td>
+        <td>Africa</td>
+        <td>Middle Africa</td>
+        <td align="right">211,028</td>
+        <td align="right">215,056</td>
+        <td align="right">1.91%</td>
+      </tr>
+      <tr>
+        <th>188</th>
+        <td>Western Samoa</td>
+        <td>Oceania</td>
+        <td>Polynesia</td>
+        <td align="right">196,129</td>
+        <td align="right">197,097</td>
+        <td align="right">0.49%</td>
+      </tr>
+      <tr>
+        <th>189</th>
+        <td>Saint Lucia</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">181,889</td>
+        <td align="right">182,790</td>
+        <td align="right">0.50%</td>
+      </tr>
+      <tr>
+        <th>190</th>
+        <td>Channel Islands (United Kingdom)</td>
+        <td>Europe</td>
+        <td>Northern Europe</td>
+        <td align="right">170,499</td>
+        <td align="right">172,259</td>
+        <td align="right">1.03%</td>
+      </tr>
+      <tr>
+        <th>191</th>
+        <td>Guam (United States)</td>
+        <td>Oceania</td>
+        <td>Micronesia</td>
+        <td align="right">165,768</td>
+        <td align="right">167,294</td>
+        <td align="right">0.92%</td>
+      </tr>
+      <tr>
+        <th>192</th>
+        <td>Curaçao (Netherlands)</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">162,752</td>
+        <td align="right">163,424</td>
+        <td align="right">0.41%</td>
+      </tr>
+      <tr>
+        <th>193</th>
+        <td>Kiribati</td>
+        <td>Oceania</td>
+        <td>Micronesia</td>
+        <td align="right">115,847</td>
+        <td align="right">117,606</td>
+        <td align="right">1.52%</td>
+      </tr>
+      <tr>
+        <th>194</th>
+        <td>F.S. Micronesia</td>
+        <td>Oceania</td>
+        <td>Micronesia</td>
+        <td align="right">112,640</td>
+        <td align="right">113,815</td>
+        <td align="right">1.04%</td>
+      </tr>
+      <tr>
+        <th>195</th>
+        <td>Grenada</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">111,454</td>
+        <td align="right">112,003</td>
+        <td align="right">0.49%</td>
+      </tr>
+      <tr>
+        <th>196</th>
+        <td>Tonga</td>
+        <td>Oceania</td>
+        <td>Polynesia</td>
+        <td align="right">110,589</td>
+        <td align="right">110,940</td>
+        <td align="right">0.32%</td>
+      </tr>
+      <tr>
+        <th>197</th>
+        <td>Saint Vincent and the Grenadines</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">110,211</td>
+        <td align="right">110,589</td>
+        <td align="right">0.34%</td>
+      </tr>
+      <tr>
+        <th>198</th>
+        <td>Aruba (Netherlands)</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">105,845</td>
+        <td align="right">106,314</td>
+        <td align="right">0.44%</td>
+      </tr>
+      <tr>
+        <th>199</th>
+        <td>U.S. Virgin Islands (United States)</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">104,680</td>
+        <td align="right">104,578</td>
+        <td align="right">-0.10%</td>
+      </tr>
+      <tr>
+        <th>200</th>
+        <td>Seychelles</td>
+        <td>Africa</td>
+        <td>Eastern Africa</td>
+        <td align="right">97,096</td>
+        <td align="right">97,739</td>
+        <td align="right">0.66%</td>
+      </tr>
+      <tr>
+        <th>201</th>
+        <td>Antigua and Barbuda</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">96,286</td>
+        <td align="right">97,118</td>
+        <td align="right">0.86%</td>
+      </tr>
+      <tr>
+        <th>202</th>
+        <td>Isle of Man (United Kingdom)</td>
+        <td>Europe</td>
+        <td>Northern Europe</td>
+        <td align="right">84,077</td>
+        <td align="right">84,584</td>
+        <td align="right">0.60%</td>
+      </tr>
+      <tr>
+        <th>203</th>
+        <td>Andorra</td>
+        <td>Europe</td>
+        <td>Southern Europe</td>
+        <td align="right">77,006</td>
+        <td align="right">77,142</td>
+        <td align="right">0.18%</td>
+      </tr>
+      <tr>
+        <th>204</th>
+        <td>Dominica</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">71,625</td>
+        <td align="right">71,808</td>
+        <td align="right">0.26%</td>
+      </tr>
+      <tr>
+        <th>205</th>
+        <td>Cayman Islands (United Kingdom)</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">64,174</td>
+        <td align="right">64,948</td>
+        <td align="right">1.21%</td>
+      </tr>
+      <tr>
+        <th>206</th>
+        <td>Bermuda (United Kingdom)</td>
+        <td>Americas</td>
+        <td>Northern America</td>
+        <td align="right">62,756</td>
+        <td align="right">62,506</td>
+        <td align="right">-0.40%</td>
+      </tr>
+      <tr>
+        <th>207</th>
+        <td>Marshall Islands</td>
+        <td>Oceania</td>
+        <td>Micronesia</td>
+        <td align="right">58,413</td>
+        <td align="right">58,791</td>
+        <td align="right">0.65%</td>
+      </tr>
+      <tr>
+        <th>208</th>
+        <td>Greenland (Denmark)</td>
+        <td>Americas</td>
+        <td>Northern America</td>
+        <td align="right">56,564</td>
+        <td align="right">56,672</td>
+        <td align="right">0.19%</td>
+      </tr>
+      <tr>
+        <th>209</th>
+        <td>Northern Mariana Islands (United States)</td>
+        <td>Oceania</td>
+        <td>Micronesia</td>
+        <td align="right">56,882</td>
+        <td align="right">56,188</td>
+        <td align="right">-1.22%</td>
+      </tr>
+      <tr>
+        <th>210</th>
+        <td>American Samoa (United States)</td>
+        <td>Oceania</td>
+        <td>Polynesia</td>
+        <td align="right">55,465</td>
+        <td align="right">55,312</td>
+        <td align="right">-0.28%</td>
+      </tr>
+      <tr>
+        <th>211</th>
+        <td>Saint Kitts and Nevis</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">52,441</td>
+        <td align="right">52,823</td>
+        <td align="right">0.73%</td>
+      </tr>
+      <tr>
+        <th>212</th>
+        <td>Faroe Islands (Denmark)</td>
+        <td>Europe</td>
+        <td>Northern Europe</td>
+        <td align="right">48,497</td>
+        <td align="right">48,678</td>
+        <td align="right">0.37%</td>
+      </tr>
+      <tr>
+        <th>213</th>
+        <td>Sint Maarten (Netherlands)</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">41,940</td>
+        <td align="right">42,388</td>
+        <td align="right">1.07%</td>
+      </tr>
+      <tr>
+        <th>214</th>
+        <td>Monaco</td>
+        <td>Europe</td>
+        <td>Western Europe</td>
+        <td align="right">38,682</td>
+        <td align="right">38,964</td>
+        <td align="right">0.73%</td>
+      </tr>
+      <tr>
+        <th>215</th>
+        <td>Turks and Caicos Islands (United Kingdom)</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">37,665</td>
+        <td align="right">38,191</td>
+        <td align="right">1.40%</td>
+      </tr>
+      <tr>
+        <th>216</th>
+        <td>Liechtenstein</td>
+        <td>Europe</td>
+        <td>Western Europe</td>
+        <td align="right">37,910</td>
+        <td align="right">38,019</td>
+        <td align="right">0.29%</td>
+      </tr>
+      <tr>
+        <th>217</th>
+        <td>San Marino</td>
+        <td>Europe</td>
+        <td>Southern Europe</td>
+        <td align="right">33,785</td>
+        <td align="right">33,860</td>
+        <td align="right">0.22%</td>
+      </tr>
+      <tr>
+        <th>218</th>
+        <td>Gibraltar (United Kingdom)</td>
+        <td>Europe</td>
+        <td>Southern Europe</td>
+        <td align="right">33,718</td>
+        <td align="right">33,701</td>
+        <td align="right">-0.05%</td>
+      </tr>
+      <tr>
+        <th>219</th>
+        <td>British Virgin Islands (United Kingdom)</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">29,802</td>
+        <td align="right">30,030</td>
+        <td align="right">0.77%</td>
+      </tr>
+      <tr>
+        <th>220</th>
+        <td>Caribbean Netherlands (Netherlands)</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">25,711</td>
+        <td align="right">25,979</td>
+        <td align="right">1.04%</td>
+      </tr>
+      <tr>
+        <th>221</th>
+        <td>Palau</td>
+        <td>Oceania</td>
+        <td>Micronesia</td>
+        <td align="right">17,907</td>
+        <td align="right">18,008</td>
+        <td align="right">0.56%</td>
+      </tr>
+      <tr>
+        <th>222</th>
+        <td>Cook Islands (New Zealand)</td>
+        <td>Oceania</td>
+        <td>Polynesia</td>
+        <td align="right">17,518</td>
+        <td align="right">17,548</td>
+        <td align="right">0.17%</td>
+      </tr>
+      <tr>
+        <th>223</th>
+        <td>Anguilla (United Kingdom)</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">14,731</td>
+        <td align="right">14,869</td>
+        <td align="right">0.94%</td>
+      </tr>
+      <tr>
+        <th>224</th>
+        <td>Tuvalu</td>
+        <td>Oceania</td>
+        <td>Polynesia</td>
+        <td align="right">11,508</td>
+        <td align="right">11,646</td>
+        <td align="right">1.20%</td>
+      </tr>
+      <tr>
+        <th>225</th>
+        <td>Wallis and Futuna (France)</td>
+        <td>Oceania</td>
+        <td>Polynesia</td>
+        <td align="right">11,661</td>
+        <td align="right">11,432</td>
+        <td align="right">-1.96%</td>
+      </tr>
+      <tr>
+        <th>226</th>
+        <td>Nauru</td>
+        <td>Oceania</td>
+        <td>Micronesia</td>
+        <td align="right">10,670</td>
+        <td align="right">10,756</td>
+        <td align="right">0.81%</td>
+      </tr>
+      <tr>
+        <th>227</th>
+        <td>Saint Helena (United Kingdom)</td>
+        <td>Africa</td>
+        <td>Western Africa</td>
+        <td align="right">6,035</td>
+        <td align="right">6,059</td>
+        <td align="right">0.40%</td>
+      </tr>
+      <tr>
+        <th>228</th>
+        <td>Saint Pierre and Miquelon (France)</td>
+        <td>Americas</td>
+        <td>Northern America</td>
+        <td align="right">5,849</td>
+        <td align="right">5,822</td>
+        <td align="right">-0.46%</td>
+      </tr>
+      <tr>
+        <th>229</th>
+        <td>Montserrat (United Kingdom)</td>
+        <td>Americas</td>
+        <td>Caribbean</td>
+        <td align="right">4,993</td>
+        <td align="right">4,989</td>
+        <td align="right">-0.08%</td>
+      </tr>
+      <tr>
+        <th>230</th>
+        <td>Falkland Islands (United Kingdom)</td>
+        <td>Americas</td>
+        <td>South America</td>
+        <td align="right">3,234</td>
+        <td align="right">3,377</td>
+        <td align="right">4.42%</td>
+      </tr>
+      <tr>
+        <th>231</th>
+        <td>Niue (New Zealand)</td>
+        <td>Oceania</td>
+        <td>Polynesia</td>
+        <td align="right">1,620</td>
+        <td align="right">1,615</td>
+        <td align="right">-0.31%</td>
+      </tr>
+      <tr>
+        <th>232</th>
+        <td>Tokelau (New Zealand)</td>
+        <td>Oceania</td>
+        <td>Polynesia</td>
+        <td align="right">1,319</td>
+        <td align="right">1,340</td>
+        <td align="right">1.59%</td>
+      </tr>
+      <tr>
+        <th>233</th>
+        <td>Vatican City</td>
+        <td>Europe</td>
+        <td>Southern Europe</td>
+        <td align="right">801</td>
+        <td align="right">799</td>
+        <td align="right">-0.25%</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th></th>
+        <td>World</td>
+        <td></td>
+        <td></td>
+        <td>7,631,091,040</td>
+        <td>7,713,468,100</td>
+        <td>+1.08%
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+
+</html>
