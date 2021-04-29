@@ -1,11 +1,11 @@
 # sheetjs
 
-
-Simple Spreadsheet UI by jQuery-plugin.
+Apply a simple spreadsheet UI to your table tag as a jQuery-plugin.
 
 Just write **'sheetjs'** class into your **'table'** tag!
 
 <img src="doc/sample.gif">
+
 
 ## Usage
 1. Import jQuery 1.x, 2.x or 3.x from CDN
@@ -48,6 +48,9 @@ Just write **'sheetjs'** class into your **'table'** tag!
 
 That's it!
 
+
+Please see the [sample.html](sample.html) .
+
 ## Specifications
 
 - Prerequisites
@@ -81,6 +84,4 @@ That's it!
   
 - Functional restrictions in IE
   - Header fixed
-  - Display button in the header filter (does not appear because the grit line is broken)
-  − IE7 cannot use Fontawsome, so add text
-
+  - No icons in IE7

@@ -7,7 +7,8 @@
  * https://github.com/hidehitomobile/sheetjs.git
  * Released under the MIT license
  *
- * @date 2021-04-25
+ * @version 1.0
+ * @date 2021-04-29
  * @author Hidehito Tanaka
  * @email hidehitomobile@gmail.com
  * 
@@ -36,6 +37,8 @@ table.sheetjs>tbody>tr>th,
 table.sheetjs>tfoot>tr>th {
 	user-select: none;
 	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
 	border: 1px solid #888;
 	padding: 5px;
 	font-weight: normal;
@@ -62,6 +65,8 @@ table.sheetjs>tbody>tr>td,
 table.sheetjs>tfoot>tr>td {
 	user-select: none;
 	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
 	background-color: #fff;
 	border: 1px solid #c4c3c3;
 	padding: 5px;

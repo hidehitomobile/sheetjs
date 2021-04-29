@@ -1,14 +1,15 @@
 
 /*!
  *
- * The 'sheetjs' is a simple spreadsheet UI for a table tag as a jQuery-plugin.
+ * The 'sheetjs' is a simple spreadsheet UI for your table tag as a jQuery-plugin.
  *
  *
  *
  * https://github.com/hidehitomobile/sheetjs.git
  * Released under the MIT license
  *
- * @date 2021-04-25
+ * @version 1.0
+ * @date 2021-04-29
  * @author Hidehito Tanaka
  * @email hidehitomobile@gmail.com
  * 
@@ -241,7 +242,7 @@
 		var preTime = new Date().getTime();
 		function printTime(str) {
 			var now = new Date().getTime();
-			if(console.log) console.log(str, (now-preTime) + 'ms');
+			if(window.console) console.log(str, (now-preTime) + 'ms');
 			preTime = now;
 		}
 		
@@ -565,7 +566,7 @@
 			// Draw the select rectangle again when the table size is changed
 			// This is only for modern browsers.
 			// Note: copy lines don't follow the size.
-			if(!isIE) {
+			if(window.ResizeObserver) {
 				new ResizeObserver(function(entries) {
 					selectRectangle();
 				}).observe(table[0]);
