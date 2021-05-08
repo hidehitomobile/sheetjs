@@ -154,7 +154,7 @@
 				if(row != 0) tsv += '\n';
 				for(var col = 0; col < data[row].length; col++) {
 					if(col != 0) tsv += '\t';
-					var text = absoluteText(data[row][col]);
+					var text = getStaticText(data[row][col]);
 					if(/[\t\n"]/.test(text)) {
 						// If it contains line breaks and tabs, enclose it in a double coat.
 						// And if there is " in the character, it is converted to "".
@@ -212,10 +212,11 @@
 		}
 	
 		/*
+		 * Get element text recursively
 		 * Include input, textarea and button value
 		 * Trim the start whitespace
 		 */
-		function absoluteText(element) {
+		function getStaticText(element) {
 			if(element.className === 'markbox') return ''; // Ignore the triangle mark. 
 	
 			var str = (/checkbox|radio/i.test(element.type)
@@ -223,7 +224,7 @@
 				: (element.nodeValue || element.value || '')).replace(/^\s+|\s+$|\n\s+|\n/g, '');
 			if(!/select/i.test(element.type)) { // Select tag has some chile not. but only get the selected option value.
 				for(var i = 0; i < element.childNodes.length; i++) {
-					str += absoluteText(element.childNodes[i]);
+					str += getStaticText(element.childNodes[i]);
 				}
 			}
 			
@@ -345,7 +346,7 @@
 				for(var c = 0; c < headCells[headCells.length-1].length; c++) {
 					var cell = headCells[headCells.length-1][c];
 					if(preCell !== cell) { // Considering colspan
-						var th = $('<th></th>').html(absoluteText(cell)).css('width', $(cell).innerWidth() + 'px');
+						var th = $('<th></th>').html(getStaticText(cell)).css('width', $(cell).innerWidth() + 'px');
 						th.refCell = cell; // Use this refernce when table resized.
 						hoverHead.find('tr').append(th);
 						preCell = cell;
@@ -453,7 +454,7 @@
 			//
 			// Note: When mousedown on the nested table's cell, rectangle draws on wrong cell.
 			table.on('mousedown', function(event) {
-				if(/th|td/i.test(event.target.tagName) && (event.button === 0 || event.button === 1)) { //IE7で左クリックが1で来るので 0に加え1も判定
+				if(/th|td/i.test(event.target.tagName) && (event.button === 0 || event.button === 1)) { // Support IE7 : Right click is '1'
 					
 					if(!event.shiftKey) {
 						beginCell = event.target;
@@ -749,7 +750,7 @@
 				var rowsVisible = [];
 				for(var row = 0; row < bodyCells.length; row++) {
 					if(bodyCells[row][col].parentNode.style.display !== 'none') { //tr
-						var text = absoluteText(bodyCells[row][col]);
+						var text = getStaticText(bodyCells[row][col]);
 						rowsVisible[row] = filter(text);
 					}
 				}
@@ -924,8 +925,8 @@
 				$(clickedCell).find('div.sortmark').html(isAsc ? '↓' : '↑').addClass('active'); // &darr; &uarr; 
 
 				bodyCells.sort(function(rowA, rowB){
-							var a = absoluteText(rowA[col]);
-							var b = absoluteText(rowB[col]);
+							var a = getStaticText(rowA[col]);
+							var b = getStaticText(rowB[col]);
 							var z = 0;
 							// Compare number string as number.
 							// Normaly: '2'> '12'
@@ -1031,7 +1032,7 @@
 					}
 					isSelecting = true;
 					selectRectangle(true); //Continuous selection
-					var str = absoluteText(target);
+					var str = getStaticText(target);
 					ctrlFilter.children('span.flt').html(str);
 					ctrlNotFilter.children('span.flt').html(str);
 					ctrlClearFilter.children('div.filtercondition').html(filterCondition);
@@ -1087,7 +1088,7 @@
 					var func = function() {
 						sumNum = 0;
 						table.find('.selectedcell:visible').each(function() {
-							var str = absoluteText(this);
+							var str = getStaticText(this);
 							var m = str.match(/([,.\-0-9]+)/); //Numeric ducktype. If it looks like a number, calculate the sum.
 							if(m) {
 								str = m[0].replace(/,/g,'');
