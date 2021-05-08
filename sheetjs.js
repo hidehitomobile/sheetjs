@@ -216,7 +216,7 @@
 		 * Trim the start whitespace
 		 */
 		function absoluteText(element) {
-			if(element.className === 'menumark') return ''; // Ignore the triangle mark. 
+			if(element.className === 'markbox') return ''; // Ignore the triangle mark. 
 	
 			var str = (/checkbox|radio/i.test(element.type)
 				? (element.checked ? element.value : "") // Get the value when it is checked.
@@ -341,10 +341,15 @@
 			// None support IE
 			if(!isIE && !isHeadless) {
 				hoverHead = $('<table class="hoverhead"><thead><tr></tr></thead></table>');
+				var preCell = null;
 				for(var c = 0; c < headCells[headCells.length-1].length; c++) {
 					var cell = headCells[headCells.length-1][c];
-					var th = $('<th></th>').html(cell.childNodes[0].nodeValue).css('width', $(cell).innerWidth() + 'px');
-					hoverHead.find('tr').append(th);
+					if(preCell !== cell) { // Considering colspan
+						var th = $('<th></th>').html(absoluteText(cell)).css('width', $(cell).innerWidth() + 'px');
+						th.refCell = cell; // Use this refernce when table resized.
+						hoverHead.find('tr').append(th);
+						preCell = cell;
+					}
 				}
 				hoverHead.css('width', table.innerWidth() + 'px');
 				hoverHead.css('left', '1px');
@@ -1116,7 +1121,7 @@
 					hoverHead.hide();
 					hoverHead.css('width', table.innerWidth() + 'px');
 					hoverHead.find('th').each(function(i) {
-						$(this).css('width', $(headCells[headCells.length-1][i]).innerWidth() + 'px');
+						$(this).css('width', $(this.refCell).innerWidth() + 'px');
 					});
 				}
 			}
