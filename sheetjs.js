@@ -439,9 +439,11 @@
 
 			// Sort event from double click event
 			table.find('>thead>tr>th').on('dblclick', function(event) {
-				clickedCell = event.target;
-				var isAsc = $(clickedCell).find('div.sortmark').html() !== '↓';
-				sortBody(isAsc);
+				if(/th/i.test(event.target.tagName)) {
+					clickedCell = event.target;
+					var isAsc = $(clickedCell).find('div.sortmark').html() !== '↓';
+					sortBody(isAsc);
+				}
 			});
 	
 			// Begin drawing the select rectangle
