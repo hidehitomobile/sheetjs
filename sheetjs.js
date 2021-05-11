@@ -918,15 +918,18 @@
 			 */
 			function sortBody(isAsc) {
 				var range = getRangeCells(allCells, clickedCell, clickedCell);
-				var col = range.col2;
+				var col = range.col1;
+				var colLen = range.col2 - range.col1; // colspan
 
 				// Set a mark
 				table.find('>thead>tr>th>div.markbox>div.sortmark.active').removeClass('active').html(''); // Reset sorted mark first
 				$(clickedCell).find('div.sortmark').html(isAsc ? '↓' : '↑').addClass('active'); // &darr; &uarr; 
 
 				bodyCells.sort(function(rowA, rowB){
-							var a = getStaticText(rowA[col]);
-							var b = getStaticText(rowB[col]);
+							var a = '';
+							for(var i = 0; i <= colLen; i++) { a += getStaticText(rowA[col+i]); }
+							var b = '';
+							for(var i = 0; i <= colLen; i++) { b += getStaticText(rowB[col+i]); }
 							var z = 0;
 							// Compare number string as number.
 							// Normaly: '2'> '12'
