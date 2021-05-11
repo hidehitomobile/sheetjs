@@ -8,15 +8,38 @@
  * https://github.com/hidehitomobile/sheetjs.git
  * Released under the MIT license
  *
- * @version 1.0
- * @date 2021-04-29
+ * @version 1.1
+ * @date 2021-05-11
  * @author Hidehito Tanaka
- * @email hidehitomobile@gmail.com
+ * @see https://github.com/hidehitomobile
  * 
  */
-(function($) {
+(function(factory) {
+	// UMD module
+	// https://github.com/umdjs/umd/blob/master/templates/jqueryPlugin.js
+	if (typeof define === 'function' && define.amd) {
+		define(['jquery'], factory);
+	}
+	else if(typeof module === 'object' && module.exports) {
+		module.exports = function(root, jQuery) {
+			if(jQuery === undefined) {
+				if(typeof window !== 'undefined') {
+					jQuery = require('jquery');
+				}
+				else {
+					jQuery = require('jquery')(root);
+				}
+			}
+			factory(jQuery);
+			return jQuery;
+		};
+	}
+	else {
+		factory(jQuery);
+	}
+}(function($) {
 
-	"use strict";
+	'use strict';
 
 	$.fn.sheetjs = function() {
 	
@@ -1138,6 +1161,6 @@
 			updateStat();
 		});
 	};
-})(jQuery);
+}));
 
 jQuery(function() { $(document).sheetjs(); });
