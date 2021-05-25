@@ -1,0 +1,320 @@
+/*!
+ *
+ * The 'sheetjs' is a simple spreadsheet UI for a table tag as a jQuery-plugin.
+ *
+ *
+ *
+ * https://github.com/hidehitomobile/sheetjs.git
+ * Released under the MIT license
+ *
+ * @version 1.0
+ * @date 2021-04-29
+ * @author Hidehito Tanaka
+ * @email hidehitomobile@gmail.com
+ * 
+ */
+
+table.sheetjs {
+	border-collapse: collapse;
+	empty-cells: show;
+	border: 1px solid #888;
+	background-color: white;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+	white-space: nowrap;
+	font-size: 13px;
+	font-family: sans-serif;
+	color: #000;
+	position: relative;
+}
+
+table.sheetjs>caption {
+	text-align: left;
+	font-size: 13.5px;
+}
+
+table.sheetjs>thead>tr>th,
+table.sheetjs>tbody>tr>th,
+table.sheetjs>tfoot>tr>th {
+	user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	border: 1px solid #888;
+	padding: 5px;
+	font-weight: normal;
+	font-size: 12px;
+	font-family: sans-serif;
+	color: #111;
+	text-align: center;
+	background-color: #f8f5f4;
+	cursor: default;
+}
+
+/* thead>tr>th is more thick then tbody>tr>th */
+table.sheetjs>thead>tr>th {
+	padding: 7px 5px;
+}
+
+/* Border color will be softer when the table has not thead */
+table.sheetjs.headless>tbody>tr>th {
+	border-color: #c4c3c3;
+}
+
+table.sheetjs>thead>tr>td,
+table.sheetjs>tbody>tr>td,
+table.sheetjs>tfoot>tr>td {
+	user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	background-color: #fff;
+	border: 1px solid #c4c3c3;
+	padding: 5px;
+	white-space: nowrap;
+	font-size: 13px;
+	font-family: sans-serif;
+	color: #000;
+	cursor: default;
+}
+
+
+table.sheetjs>thead>tr>th[contenteditable="true"],
+table.sheetjs>thead>tr>td[contenteditable="true"],
+table.sheetjs>thead>tr>th[contenteditable="true"],
+table.sheetjs>tbody>tr>td[contenteditable="true"],
+table.sheetjs>tfoot>tr>th[contenteditable="true"],
+table.sheetjs>tfoot>tr>td[contenteditable="true"] {
+	background-color: #fffed8;
+}
+
+table.sheetjs>thead>tr>th:focus,
+table.sheetjs>tbody>tr>th:focus,
+table.sheetjs>tfoot>tr>th:focus,
+table.sheetjs>thead>tr>td:focus,
+table.sheetjs>tbody>tr>td:focus,
+table.sheetjs>tfoot>tr>td:focus {
+	outline: none;
+}
+
+table.sheetjs>thead>tr>th:first-child,
+table.sheetjs>thead>tr>td:first-child,
+table.sheetjs>tbody>tr>th:first-child,
+table.sheetjs>tbody>tr>td:first-child,
+table.sheetjs>tfoot>tr>th:first-child,
+table.sheetjs>tfoot>tr>td:first-child {
+	border-left: 1px solid #999;
+}
+
+table.sheetjs>thead>tr>th:last-child,
+table.sheetjs>thead>tr>td:last-child,
+table.sheetjs>tbody>tr>th:last-child,
+table.sheetjs>tbody>tr>td:last-child,
+table.sheetjs>tfoot>tr>th:last-child,
+table.sheetjs>tfoot>tr>td:last-child {
+	border-right: 1px solid #999;
+}
+
+table.sheetjs>thead>tr:first-child>th,
+table.sheetjs>thead>tr:first-child>td,
+table.sheetjs>tbody>tr:first-child>th,
+table.sheetjs>tbody>tr:first-child>td {
+	border-top: 1px solid #999;
+}
+
+table.sheetjs>tbody>tr:last-child>th,
+table.sheetjs>tbody>tr:last-child>td,
+table.sheetjs>tfoot>tr:last-child>th,
+table.sheetjs>tfoot>tr:last-child>td {
+	border-bottom: 1px solid #999;
+}
+
+table.sheetjs>tfoot>tr:first-child>th,
+table.sheetjs>tfoot>tr:first-child>td {
+	border-top: 3px double #aaa;
+}
+
+table.sheetjs>thead>tr>td.selectedcell,
+table.sheetjs>tbody>tr>td.selectedcell,
+table.sheetjs>tfoot>tr>td.selectedcell {
+	background-color: #eaf1fd;
+}
+
+table.sheetjs>thead>tr>th:hover {
+	color: #111;
+	background-color: #e4e6e9;
+}
+
+table.sheetjs>thead>tr>th.selectedcol {
+	background-color: #e4e6e9;
+}
+
+table.sheetjs>thead>tr>th>div.markbox {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	font-family: monospace;
+	vertical-align: top;
+	font-size: 0px;
+}
+
+table.sheetjs>thead>tr>th>div.markbox>div.sortmark {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+	font-size: 9px;
+	text-align: center;
+	color: #8f8a8a;
+	opacity: 0;
+}
+
+table.sheetjs>thead>tr>th>div.markbox>div.sortmark.active {
+	opacity: 0.85;
+}
+
+table.sheetjs>thead>tr>th>div.markbox>div.menumark {
+	display: inline-block;
+	margin: 0px;
+	padding: 3px;
+	font-size: 7px;
+	text-align: center;
+	color: #9f9a9a;
+	opacity: 0.4;
+}
+
+table.sheetjs>thead>tr>th>div.markbox>div.menumark:hover {
+	background-color: #c3c0c0;
+	opacity: 0.85;
+}
+
+table.sheetjs>thead>tr>th>div.markbox>div.menumark:active {
+	background-color: #b3b0b0;
+	opacity: 0.85;
+}
+
+table.sheetjs>thead>tr>th>div.markbox>div.menumark.active {
+	background-color: #b3b0b0;
+	opacity: 0.85;
+}
+
+table.sheetjs>thead>tr>th>div.markbox>div.menumark.filtering {
+	background-color: #e3e0e0;
+	color: #6f6868;
+	opacity: 0.8;
+}
+
+table.sheetjs>thead>tr>th.selectedcol>div.markbox>div.menumark,
+table.sheetjs>thead>tr>th:hover>div.markbox>div.menumark {
+	color: #5f5858;
+	opacity: 0.85;
+}
+
+table.sheetjs>caption .material-icons {
+	font-size: 18px;
+	vertical-align: bottom;
+}
+
+table.sheetjs>caption div.contextbox {
+	border: 1px solid #ccc;
+	position: fixed;
+	z-index: 3;
+	display: inline-block;
+	background: #fff;
+	box-shadow: 0px 1px 2px rgba(100, 100, 100, 0.2);
+	min-width: 200px;
+}
+
+table.sheetjs>caption div.contextmenu {
+	padding: 10px 15px;
+	font-size: 13px;
+	color: #555;
+	cursor: pointer;
+	background-color: #fff;
+}
+
+table.sheetjs>caption div.contextmenu:hover {
+	background-color: #f2efef;
+}
+
+table.sheetjs>caption div.contextmenu:active {
+	background-color: #e2dfdf;
+}
+
+table.sheetjs>caption span.captionmenu {
+	display: inline-block;
+	padding: 5px;
+	margin: 1px;
+	border-radius: 6px;
+	font-size: 13px;
+	color: #555;
+	cursor: pointer;
+	background-color: tranceparent;
+}
+
+table.sheetjs>caption span.captionmenu:hover {
+	background-color: #e2dfdf;
+}
+
+table.sheetjs>caption span.captionmenu:active {
+	background-color: #c2bfbf;
+}
+
+table.sheetjs>caption span.captionbox {
+	font-size: 13px;
+	color: #777;
+	display: inline-block;
+	padding: 0px 7px
+}
+
+table.sheetjs>caption div.rectline {
+	border: 1px solid #2b73e8;
+	position: absolute;
+	z-index: 2;
+	display: none;
+	pointer-events: none;
+}
+
+table.sheetjs>caption div.rectline.dashed {
+	border-style: dashed;
+}
+
+table.sheetjs>caption div>input.searchfilter {
+	border: 1px solid #ccc;
+	font-size: 13px;
+	padding: 2px 10px;
+	border-radius: 10px;
+	width: 120px;
+}
+
+table.sheetjs>caption div>input.searchfilter:focus {
+	outline: none;
+	border: 1px solid #2b73e8;
+}
+
+table.sheetjs>caption div.filtercondition {
+	font-size: 12px;
+	color: #777;
+	text-align: right;
+}
+
+table.sheetjs>caption>table.hoverhead {
+	border-collapse: collapse;
+	empty-cells: show;
+	position: absolute;
+	z-index: 4;
+	background-color: #ddd;
+	user-select: none;
+	-ms-user-select: none;
+	opacity: 0.9;
+	display: none;
+}
+
+table.sheetjs>caption>table.hoverhead>thead>tr>th {
+	border: none;
+	font-size: 11px;
+	font-weight: normal;
+	padding: 7px 0px;
+	color: #222;
+	text-align: center;
+	font-family: sans-serif;
+	background-color: #f8f5f4;
+}

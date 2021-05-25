@@ -8,20 +8,17 @@ Just write **'sheetjs'** class into your **'table'** tag!
 
 
 ## Usage
-1. Import jQuery 1.x, 2.x or 3.x from CDN
+1. Import jQuery(1.x, 2.x or 3.x) and Material Icons from CDN
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-```
-2. Import Material Icons from CDN
-```html
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 ```
-3. Import sheetjs.css and sheetjs.js
+2. Import jquery.sheetjs.css and jquery.sheetjs.js
 ```html
-<link rel="stylesheet" href="sheetjs.css" />
-<script src="sheetjs.js"></script>
+<link rel="stylesheet" href="jquery.sheetjs.css" />
+<script src="jquery.sheetjs.js"></script>
 ```
-4. Set "sheetjs" class to your table tag
+3. Set "sheetjs" class to your table tag
 ```html
 <table class="sheetjs">
   <caption>Table name(optional)</caption>
@@ -60,10 +57,10 @@ Please see the [sample.html](sample.html) .
 - Functions
   - Cell selection
     - Click the cell to select it.
-    - Click with Shift-key, the rectangle will be sekected.
+    - Click with Shift-key, the rectangle will be selected.
     - If another area is selected, the selection will be removed.
   - Line selection
-    - Click 'th' at the beginning of a line in tbody, you can also select a ractangle by selectiong the line
+    - Click 'th' at the beginning of a line in tbody, you can also select the line
     - Clicking on other element on th is not work
   - Column selection
     - Click on a colum 'thead th' to select all the columns with thead, tbody and tfoot.
@@ -83,5 +80,5 @@ Please see the [sample.html](sample.html) .
     - Follow only the header title as the window scrolls
   
 - Functional restrictions in IE
-  - Header fixed
+  - No header fixed
   - No icons in IE7
