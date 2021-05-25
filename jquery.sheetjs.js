@@ -1147,7 +1147,6 @@
 
 				// Ajust width of the hover header
 				if(hoverHead) {
-					hoverHead.hide();
 					hoverHead.css('width', table.innerWidth() + 'px');
 					hoverHead.find('th').each(function(i) {
 						$(this).css('width', $(this.refCell).innerWidth() + 'px');
